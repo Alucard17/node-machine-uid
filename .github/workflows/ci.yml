@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
-        node-version: [16.x, 17.x, 18.x]
+        node-version: [16.x]
 
     runs-on: ${{ matrix.os }}
 
@@ -72,5 +72,5 @@ jobs:
       - run: pnpm i
       - run: pnpm dlx semantic-release@20 --branches main
         env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
