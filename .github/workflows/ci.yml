@@ -72,5 +72,5 @@ jobs:
       - run: pnpm i
       - run: pnpm dlx semantic-release@20 --branches main
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
