@@ -46,7 +46,7 @@ const execCmd = (cmd: string): Promise<string> => {
           new Error(`Error while obtaining machine id: ${err.stack}`),
         )
       }
-      return stdout.toString()
+      return resolve(stdout.toString())
     })
   })
 }
