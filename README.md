@@ -1,35 +1,64 @@
-**💛 You can help the author become a full-time open-source maintainer by [sponsoring him on GitHub](https://github.com/sponsors/egoist).**
+# node-machine-uid
 
----
+`node-machine-uid` is a Node.js library for generating machine-unique identifiers. This library is a fork of the popular [node-machine-id](https://github.com/automation-stack/node-machine-id) library, with modifications to fix an issue on Windows where reading the registry is disabled due to access rights. `node-machine-uid` uses the [registry-js](https://github.com/desktop/registry-js) library to get the machine ID on Windows, which does not require the use of `reg.exe`.
 
-# my-ts-lib
+**Cross-platform unique machine (desktop) id discovery**
 
-[![npm version](https://badgen.net/npm/v/my-ts-lib)](https://npm.im/my-ts-lib) [![npm downloads](https://badgen.net/npm/dm/my-ts-lib)](https://npm.im/my-ts-lib)
+## Use cases
 
-## Using this template
+- Software restrictions
+- Installation tracking
 
-- Search `my-ts-lib` and replace it with your custom package name.
-- Search `egoist` and replace it with your name.
+## Features
 
-Features:
+- Hardware independent
+- Unique within the OS installation
+- No elevated rights required
+- No external dependencies and does not require any native bindings
+- Cross-platform (OSx, Win, Linux)
 
-- Package manager [pnpm](https://pnpm.js.org/), safe and fast
-- Release with [semantic-release](https://npm.im/semantic-release)
-- Bundle with [tsup](https://github.com/egoist/tsup)
-- Test with [vitest](https://vitest.dev)
+## Installation
 
-To skip CI (GitHub action), add `skip-ci` to commit message. To skip release, add `skip-release` to commit message.
+To install `node-machine-uid` in your project, run:
 
-## Install
+bashCopy code
 
-```bash
-npm i my-ts-lib
+`$ npm install node-machine-uid`
+
+## Usage
+
+#### To use `node-machine-uid`:
+
+```js
+import machineId from "node-machine-uid"
+
+const id = machineId()
+
+console.log(id)
 ```
 
-## Sponsors
+This will output a unique 64 character identifier in the following format:
+`XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
 
-[![sponsors](https://sponsors-images.egoist.dev/sponsors.svg)](https://github.com/sponsors/egoist)
+On Windows, `node-machine-uid` uses `registry-js` to get the machine ID, which does not require the use of `reg.exe`. Instead, it generates a unique ID based on the computer name and the processor architecture.
+
+## Contributing
+
+Contributions to `node-machine-uid` are welcome! If you would like to contribute, please follow these steps:
+
+1.  Fork the repo.
+2.  Create a new branch for your feature/bugfix.
+3.  Write tests for your changes.
+4.  Implement your changes.
+5.  Run the tests to make sure everything passes.
+6.  Submit a pull request.
 
 ## License
 
-MIT &copy; [EGOIST](https://github.com/sponsors/egoist)
+`node-machine-uid` is licensed under the MIT License. See the [LICENSE](https://chat.openai.com/LICENSE) file for more information.
+
+## Acknowledgments
+
+The `node-machine-uid` library is a fork of the [node-machine-id](https://github.com/automation-stack/node-machine-id) library. Special thanks to the original authors for creating such a useful library!
+
+`node-machine-uid` also uses the [registry-js](https://github.com/desktop/registry-js) library to get the machine ID on Windows. Thank you to the `registry

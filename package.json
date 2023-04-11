@@ -1,10 +1,33 @@
 {
-  "name": "my-ts-lib",
-  "version": "0.0.0",
-  "description": "My awesome typescript library",
+  "name": "node-machine-uid",
+  "version": "1.0.0",
+  "description": "Unique machine (desktop) id (no admin privileges required).doesn't use reg.exe on windows",
   "publishConfig": {
     "access": "public"
   },
+  "author": "Alucard17",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Alucard17/node-machine-uid.git"
+  },
+  "keywords": [
+    "unique id",
+    "license",
+    "trial",
+    "user license",
+    "user id",
+    "machine id",
+    "unique platform id",
+    "node platform id",
+    "unique identifier",
+    "restrictions",
+    "electron id",
+    "nw.js id"
+  ],
+  "bugs": {
+    "url": "https://github.com/Alucard17/node-machine-uid/issues"
+  },
+  "homepage": "https://github.com/Alucard17/node-machine-uid#readme",
   "files": [
     "dist"
   ],
@@ -28,5 +51,8 @@
     "tsup": "6.6.3",
     "typescript": "4.9.5",
     "vitest": "0.28.5"
+  },
+  "dependencies": {
+    "registry-js": "^1.15.1"
   }
 }
