@@ -1,3 +1,5 @@
+[![CI](https://github.com/Alucard17/node-machine-uid/actions/workflows/ci.yml/badge.svg)](https://github.com/Alucard17/node-machine-uid/actions/workflows/ci.yml)
+
 # node-machine-uid
 
 `node-machine-uid` is a Node.js library for generating machine-unique identifiers. This library is a fork of the popular [node-machine-id](https://github.com/automation-stack/node-machine-id) library, with modifications to fix an issue on Windows where reading the registry is disabled due to access rights. `node-machine-uid` uses the [registry-js](https://github.com/desktop/registry-js) library to get the machine ID on Windows, which does not require the use of `reg.exe`.
