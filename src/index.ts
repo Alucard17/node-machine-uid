@@ -74,7 +74,6 @@ export default async function machineId(original: boolean = false) {
   } else {
     throw new Error(`Unsupported platform: ${process.platform}`)
   }
-  console.log(result)
 
   result = format(result)
 
