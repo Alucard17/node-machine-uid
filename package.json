@@ -1,6 +1,6 @@
 {
   "name": "node-machine-uid",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unique machine (desktop) id (no admin privileges required).doesn't use reg.exe on windows",
   "publishConfig": {
     "access": "public"
@@ -39,8 +39,7 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm",
-    "build": "pnpm run build-fast -- --dts-resolve",
+    "build": "tsup src/index.ts --format cjs,esm --dts-resolve",
     "test": "vitest run",
     "prepublishOnly": "pnpm run build"
   },
